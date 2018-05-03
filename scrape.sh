@@ -21,8 +21,8 @@ for counter in {0..10000}; do
 
         info=`echo $result | grep -Po '<td class="admin_table_td([1-2]*) schoon_right">\K[^<]*' | head -n5 | sed 's/.*/"&",/'`
 
-        output=`echo "${name},${info}"`
-        echo $found,$output>>$outputFile
+        output=`echo "${found},${name},${info}"`
+        echo $output>>$outputFile
 
         echo -ne "Schools found: $found\r"
         let found=found+1
